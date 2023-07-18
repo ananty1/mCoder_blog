@@ -32,3 +32,19 @@ So here we will create the blogs as they should ideally be , so we gonna use git
 This is to see any string ----path('<str:slug>',views.blogPost, name = 'blogPost'),
 
 ## Now next step is to include a HTML TEMPLATE which is achieved by.
+i) Create a template and a staic directory in the directory where your manage.py resides
+### Do not forget to add templates in your setting like-------
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': ['templates'],         ## Here is the change
+        'APP_DIRS': True,
+        ........
+    }
+]
+
+
+We wiil create a base.html which will act as base for all the related web-pages
+How do we achieve that?
+
+
