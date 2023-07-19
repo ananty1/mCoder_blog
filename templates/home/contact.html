@@ -3,8 +3,31 @@
 {% block title %} Contact {% endblock title%}
 
 {% block body %}
-<div class= "container">
-  This is contact page/
+<div class= "container my-2">
+  <h3> Share Your Feedback contact_mCoders </h3>
+  <form action='/contact' method = "post" >
+    <div class="form-group">
+      <label for="name"> Name </label>
+      <input type="text" class="form-control" id="name" placeholder="name">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" placeholder="name@example.com">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number </label>
+      <input type="phone" class="form-control" id="phone" placeholder="8974233422">
+    </div>
+
+    <div class="form-group">
+      <label for="content">Describe your Issue</label>
+      <textarea class="form-control" id="content" rows="3"></textarea>
+    </div>
+
+    <button class="btn btn-primary"> Submit </button>
+  </form>
 
 </div>
 
