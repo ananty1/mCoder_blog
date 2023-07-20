@@ -46,5 +46,13 @@ TEMPLATES = [
 
 We wiil create a base.html which will act as base for all the related web-pages
 How do we achieve that?
+simply extend ,that's it
+
+## NOw migrations---------->
+tell django that these are the updates
+
+# Create admin-user
+
+# then create -super user
 
 
