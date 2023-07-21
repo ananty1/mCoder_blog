@@ -55,4 +55,24 @@ tell django that these are the updates
 
 # then create -super user
 
+### Seems like search functionality will be the toughest part
+------query = request.GET['query']
+    blogs = Post.objects.filter(title__icontains=query)
+    Yeah ,thankfully icontains pops up as our saviour \
+
+## But next is authentication ,let's see
+------Djnago has built in users authentication system
+------authorization -permission
+-------authentication---Your Identity
+
+<!-- Django authentication is general ,can be used for any type of website,whenther blog ,or online search sites-->
+So a good things is there is built-in modal for creating users, so signUp is easy.
+
+To validate or authentication validation of a user ,django does have inbuilt- functions
+--from django.contrib.auth import authenticate,login,logout
+and if anyone is having time reading this-do not forget 
+## Jaadu------
+if user.is_authenticated in django let's u logged in.
+
+
 

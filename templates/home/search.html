@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %} Search Results {% endblock title%}
+
+{% block blogActive %}active{% endblock blogActive %}
+{% block body %}
+<div class= "container my-3">
+    {% if blogs|length < 1 %}
+        <strong><p style="font-size:30px;"> No results found</p> </strong>
+        Your search - <b> {{query|truncatechars:100}}  </b> did not match any documents.
+
+    <div>
+        <b>Suggestions: </b>
+        <br>
+        <ul>
+            <li> Make sure that all words are spelled correctly.</li>
+            <li> Try different keywords.</li>
+            <li>  Try more general keywords.</li>
+            <li> Try fewer keywords..</li>
+        </ul>
+        
+    </div>
+
+    
+    
+    {% else %}
+  <h2>Search Results: </h2>
+    
+      {% for post in blogs  %}
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-1"> {{post.title}}</h3>
+            <strong class="d-inline-block mb-2 text-primary"> {{post.author}}</strong>
+          
+          <p class="card-text mb-auto">T{{post.content | truncatechars:200}}</p>
+          <div>
+            <a class="btn btn-lg btn-primary" role='submit' href="/blog/{{post.slug}}">Continue reading</a>
+
+          </div>
+        </div>
+        
+        
+      </div>
+      {% endfor %}
+      {% endif %}
+
+</div>
+
+{% endblock body %}
+

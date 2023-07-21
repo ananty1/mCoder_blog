@@ -1,1 +1,2 @@
 django==4.2.3
+#Do not forget to have your Internet on to load bootstrap css,and javascript

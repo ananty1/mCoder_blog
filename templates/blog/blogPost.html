@@ -3,8 +3,15 @@
 {% block title %} blogPost {% endblock title%}
 
 {% block body %}
-<div class= "container">
-  This is blogPost page/
+<div class= "container my-3">
+  <article class="blog-post">
+  
+    <h2 class="blog-post-title">{{post.title}}</h2>
+    <p class="blog-post-meta">{{post.timestamp}} <a href="/about">{{post.author}}</a></p>
+    <p >{{post.content}}</p>
+    <br>
+
+  </article>
 
 </div>
 
