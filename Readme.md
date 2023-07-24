@@ -37,6 +37,7 @@ HomePage--
 ------------------------------------------------------------------------------------------------>
 # How did we achieve that?
 Please Note that the following is how i build the project,what were the problems? How did we overcame that!
+
 Step 1- Start a project using django-admin startproject project_name
 Step 2- Create app for the project using python3 manage.py startapp app_name
 
