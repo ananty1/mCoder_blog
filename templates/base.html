@@ -174,7 +174,13 @@
 
   {% comment %} We will create a block body {% endcomment %}
   {% block body %}{% endblock body %}
-  {% block js %}{% endblock js %}
+  
+  <script>
+    let previews = document.getElementsByClassName('preview');
+    Array.from(previews).forEach((element)=>{
+      element.innerHTML = element.innerText
+    })
+  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

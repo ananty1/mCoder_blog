@@ -91,3 +91,22 @@ Note: One can only reply to the original comment
 
 ## Now Is the final one Editing the blog 
  We have used tinyMCE Editor for it.
+ So In order to use tinyMCE ,one has to integrate this with Django,
+ A tinyInject.js file has been create which is needed to change the content of the post as per html ,
+ Let' integrate it---(using app's admin--(blog.admin))
+ <<<<<<<<<<<<<=======================================>>>>>>>>>>>>>
+    @admin.register(Post)
+    class PostAdmin(admin.ModelAdmin):
+    class Media:
+        js  = ('tinyInject.js',)
+<<<<<<<<<<<<<<<<<<<<<========================>>>>>>>>>>>>>>>>>>>>>
+ And it's successfully done! 
+ 
+
+ ## Before Ending this Blog Project ,
+ One more thing to do ---- Blog view count
+ 
+ And That's it 
+ ## Happy Ending
+ ## Journey to code begins forever..............
+ 

@@ -7,28 +7,35 @@ from blog.templatetags import extras
 # Create your views here.
 
 def blogHome(request):
-    blogs = Post.objects.all().order_by('sno')[:50]
+    blogs = Post.objects.all().order_by('-views')[:50]
     context = {'blogs':blogs}
 
     return render(request,'blog/blogHome.html',context)
 
 def blogPost(request,slug):
     blog = Post.objects.filter(slug = slug).first()
-    comments = blogComment.objects.filter(blog = blog,parent=None)
-    replies = blogComment.objects.filter(blog=blog).exclude(parent=None)
-    repDict={}
+    if(blog!=None):
+        blog.views = blog.views +1
+        blog.save()
+        comments = blogComment.objects.filter(blog = blog,parent=None)
+        replies = blogComment.objects.filter(blog=blog).exclude(parent=None)
+        repDict={}
 
-    for reply in replies:
-        if reply.parent==None:
-            pass
-        else:
-            if reply.parent.sno not in repDict.keys():
-                repDict[reply.parent.sno]=[reply]
+        for reply in replies:
+            if reply.parent==None:
+                pass
             else:
-                repDict[reply.parent.sno].append(reply)
+                if reply.parent.sno not in repDict.keys():
+                    repDict[reply.parent.sno]=[reply]
+                else:
+                    repDict[reply.parent.sno].append(reply)
+        
+        context = {"post":blog,'comments':comments,'replyDict':repDict}
+        return render(request,'blog/blogPost.html',context)
+    else:
+        messages.error(request,'No Page Found! Please recheck your query')
+    return redirect('/blog')
     
-    context = {"post":blog,'comments':comments,'replyDict':repDict}
-    return render(request,'blog/blogPost.html',context)
 
 #APIS to comment
 def blogCommentfunc(request):

@@ -9,7 +9,8 @@
   <article class="blog-post">
 
     <h2 class="blog-post-title">{{post.title}}</h2>
-    <p class="blog-post-meta">{{post.timestamp}} <a href="/about">{{post.author}}</a></p>
+    <p class="blog-post-meta">{{post.timestamp}} <a href="/about">{{post.author}}</a>  <span class="badge badge-secondary">  Views: {{post.views}}</span> </p>
+    
     <p>{{post.content | safe }}</p>
     <hr>
     <div class="container">

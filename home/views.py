@@ -8,7 +8,10 @@ from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 def home(request):
-    return render(request,'home/home.html')
+    # Fetch posts
+    posts = Post.objects.all().order_by('-views')[:3]
+    context = {'posts':posts}
+    return render(request,'home/home.html',context)
 
 def about(request):
     messages.success(request,'This is our about Page')
