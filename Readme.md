@@ -1,7 +1,7 @@
 <!-- Do not foget to pip install -r requirement.txt -->
 
 # Django Blog App
-This is a Django Blog template, integrated with tinyMCE Editor,using Bootstrap.
+This is a Django Blog template, integrated with tinyMCE Editor,using Bootstrap in a virtual environment. 
 # Functionality--
     1)Blog Creation
     Any New blog can be created and shown in the Blog using tinyMCE Editor, admin is needed to write a post/blog
@@ -20,11 +20,21 @@ This is a Django Blog template, integrated with tinyMCE Editor,using Bootstrap.
 ---- Django for backend
 ---- tinyMCE Editor for writing blogs as admin 
 
+### How it looks like
+HomePage--
+![HomeWithoutLogin](https://github.com/ananty1/mCoder_blog/assets/105732693/d3f5bd2f-56ae-452d-aa31-5d5d7c227300)
 
+### BlogPage- 
+![Blog_page](https://github.com/ananty1/mCoder_blog/assets/105732693/e410c425-22ca-42c0-a015-84817bfd5e9e)
 
+### Sample Blog Page
+![blog_page_Sample](https://github.com/ananty1/mCoder_blog/assets/105732693/2d1f926f-7753-4bef-8148-2eaad7db9a93)
+### Comment Section
+![Comments](https://github.com/ananty1/mCoder_blog/assets/105732693/55ff205e-12ac-408e-8cce-1e8280657c29)
 
+#### Special request - Do not forget to write requirement.txt
 
-
+------------------------------------------------------------------------------------------------>
 ## How did we achieve that?
 Step 1- Start a project using django-admin startproject project_name
 Step 2- Create app for the project using python3 manage.py startapp app_name
@@ -50,7 +60,7 @@ No app has urls.py initially,we need to create that for our every app.
 
 So here we will create the blogs as they should ideally be , so we gonna use git too.
 
-## Special request - Do not forget to write requirement.txt
+
 
 ###  Also we gonna install virtual enviornment virtualenv
 ----------- So this create a folder which includes an independent python--------------
