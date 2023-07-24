@@ -10,6 +10,7 @@ class Post(models.Model):
     author = models.CharField(max_length=50)
     content = models.TextField()
     views = models.IntegerField(default=0)
+    img = models.CharField(max_length=500)
     slug = models.CharField(max_length=130)
     timestamp = models.DateTimeField(blank=True)
 

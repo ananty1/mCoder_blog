@@ -3,6 +3,19 @@
 {% block title %} Home {% endblock title%}
 
 {% block homeActive %}active{% endblock homeActive %}
+
+{% block style %}
+.my-Img{
+  
+  height: 300px;
+  overflow: hidden;
+  margin: auto;
+
+}
+{% endblock style %}
+
+
+
 {% block body %}
 
 
@@ -13,29 +26,35 @@
     <div class="jumbotron">
       <div class="container">
         <h1 class="display-3">Welcome to mCoder!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="/blog" role="button"> Go to Blog </a></p>
+        <p>Blogging starts here. The place where  people find the best of blogs. Every field is being covered i.e. technology,Sports ,Entertainment ,Education etc.  </p>
+        <p><a class="btn btn-info btn-lg" href="/blog" role="button"> Go to Blog </a></p>
       </div>
     </div>
   
     <div class="py-5 text-center">
       
       <h2>Checkout Our Top Blogs</h2>
-      
+      <hr>
     </div>
 
       <!-- Example row of columns -->
       <div class="row">
         {% for post in posts %}
         <div class="col-md-4">
-          <h2>{{post.title}}</h2>
+          <h3 class"col-md-4">{{post.title}}</h3>
+          <img class="my-Img rounded mx-auto d-block w-75 border border-dark my-2" src="{{post.img}}" alt="user">
           <p> <div class="preview"> {{post.content | safe |truncatechars:150 }} </div></p>
-          <p><a class="btn btn-secondary" role='submit' href="/blog/{{post.slug}}">View details »</a></p>
+          <p><a class="btn btn-info" role='submit' href="/blog/{{post.slug}}">View details »</a></p>
         </div>
         {% endfor %}
       </div>
   
       <hr>
+      
+       
+
+        
+      </div>
   
     </div> <!-- /container -->
   
