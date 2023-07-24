@@ -20,22 +20,23 @@ This is a Django Blog template, integrated with tinyMCE Editor,using Bootstrap i
 ---- Django for backend
 ---- tinyMCE Editor for writing blogs as admin 
 
-### How it looks like
+# How it looks like
 HomePage--
 ![HomeWithoutLogin](https://github.com/ananty1/mCoder_blog/assets/105732693/d3f5bd2f-56ae-452d-aa31-5d5d7c227300)
 
-### BlogPage- 
+## BlogPage- 
 ![Blog_page](https://github.com/ananty1/mCoder_blog/assets/105732693/e410c425-22ca-42c0-a015-84817bfd5e9e)
 
-### Sample Blog Page
+## Sample Blog Page
 ![blog_page_Sample](https://github.com/ananty1/mCoder_blog/assets/105732693/2d1f926f-7753-4bef-8148-2eaad7db9a93)
-### Comment Section
+## Comment Section
 ![Comments](https://github.com/ananty1/mCoder_blog/assets/105732693/55ff205e-12ac-408e-8cce-1e8280657c29)
 
-#### Special request - Do not forget to write requirement.txt
+### Special request - Do not forget to write requirement.txt
 
 ------------------------------------------------------------------------------------------------>
-## How did we achieve that?
+# How did we achieve that?
+Please Note that the following is how i build the project,what were the problems? How did we overcame that!
 Step 1- Start a project using django-admin startproject project_name
 Step 2- Create app for the project using python3 manage.py startapp app_name
 
@@ -67,7 +68,7 @@ So here we will create the blogs as they should ideally be , so we gonna use git
 
 This is to see any string ----path('<str:slug>',views.blogPost, name = 'blogPost'),
 
-## Now next step is to include a HTML TEMPLATE which is achieved by.
+### Now next step is to include a HTML TEMPLATE which is achieved by.
 i) Create a template and a staic directory in the directory where your manage.py resides
 ### Do not forget to add templates in your setting like-------
 TEMPLATES = [
@@ -84,19 +85,17 @@ We wiil create a base.html which will act as base for all the related web-pages
 How do we achieve that?
 simply extend ,that's it
 
-## NOw migrations---------->
+### NOw migrations---------->
 tell django that these are the updates
 
-# Create admin-user
-
-# then create -super user
-
+### Create admin-user
+### then create -super user
 ### Seems like search functionality will be the toughest part
 ------query = request.GET['query']
     blogs = Post.objects.filter(title__icontains=query)
     Yeah ,thankfully icontains pops up as our saviour \
 
-## But next is authentication ,let's see
+### But next is authentication ,let's see
 ------Djnago has built in users authentication system
 ------authorization -permission
 -------authentication---Your Identity
@@ -107,25 +106,25 @@ So a good things is there is built-in modal for creating users, so signUp is eas
 To validate or authentication validation of a user ,django does have inbuilt- functions
 --from django.contrib.auth import authenticate,login,logout
 and if anyone is having time reading this-do not forget 
-## Jaadu------
+### Jaadu------
 if user.is_authenticated in django let's u logged in.
 
-## How to think about making Comments? Intersting question,huh!!
+### How to think about making Comments? Intersting question,huh!!
 Adding comment is really intersting,which is nothing just another model and another form 
 
-## To use static files do not forget to add this to settings.py of your project
+### To use static files do not forget to add this to settings.py of your project
 -----STATICFILES_DIRS = [
     BASE_DIR / "static",
     "/var/www/static/",
 ]
 
-## Well-well after successfully making a comment ,next turn is to do reply ,but i am not able to make proper blue-print to reply.
+##### Well-well after successfully making a comment ,next turn is to do reply ,but i am not able to make proper blue-print to reply.
 
-## Questions? I couldn't resolve,how the hell the looping reply inside the comments are going to be written .
+#### Questions? I couldn't resolve,how the hell the looping reply inside the comments are going to be written .
 As a first step, he saved the dictory[reply.sno]=[reply]
 Note: One can only reply to the original comment
 
-## Now Is the final one Editing the blog 
+#### Now Is the final one Editing the blog 
  We have used tinyMCE Editor for it.
  So In order to use tinyMCE ,one has to integrate this with Django,
  A tinyInject.js file has been create which is needed to change the content of the post as per html ,
@@ -139,10 +138,10 @@ Note: One can only reply to the original comment
  And it's successfully done! 
  
 
- ## Before Ending this Blog Project ,
+ #### Before Ending this Blog Project ,
  One more thing to do ---- Blog view count
  
  And That's it 
  ## Happy Ending
- ## Journey to code begins forever..............
+ # Journey to code begins forever..............
  
