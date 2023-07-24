@@ -1,5 +1,31 @@
 <!-- Do not foget to pip install -r requirement.txt -->
 
+# Django Blog App
+This is a Django Blog template, integrated with tinyMCE Editor,using Bootstrap.
+# Functionality--
+    1)Blog Creation
+    Any New blog can be created and shown in the Blog using tinyMCE Editor, admin is needed to write a post/blog
+    2) SignUp functionality
+    ----New user can sign Up to the mCoder Blog.
+    2) SignIn/SignOut Functionality
+    ---user may sign-in and sign Out as per their convenience.
+    3) Comment Section to a Blog
+    ---only the authenticated user have access to comment and reply.
+    4) Reply Section
+    ---user may reply to a comment,limit to only one reply.
+    5) Contact 
+    ---User may contact to owner and share their feedback.
+# Apps used--
+---- Bootstrap for front End
+---- Django for backend
+---- tinyMCE Editor for writing blogs as admin 
+
+
+
+
+
+
+## How did we achieve that?
 Step 1- Start a project using django-admin startproject project_name
 Step 2- Create app for the project using python3 manage.py startapp app_name
 
