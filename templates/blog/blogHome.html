@@ -10,12 +10,12 @@
       {% for post in blogs  %}
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col p-4 d-flex flex-column position-static">
-          <h3 class="mb-1"> {{post.title}}</h3>
-            <strong class="d-inline-block mb-2 text-primary"> {{post.author}}</strong>
+          <strong class="d-inline-block mb-2 text-primary"> Article By {{post.author}}</strong>
+          <h3 class="mb-1"> <a  class="text-dark" href="/blog/{{post.slug}}" > {{post.title}} </a></h3>
           
-          <p class="card-text mb-auto">{{post.content | truncatechars:200}}</p>
+          <p class="card-text mb-auto"><div class="preview">{{post.content|safe | truncatechars:200}} </div></p>
           <div>
-            <a class="btn btn-lg btn-primary" role='submit' href="/blog/{{post.slug}}">Continue reading</a>
+            <a class="btn btn-lg btn-primary my-2" role='submit' href="/blog/{{post.slug}}">Continue reading</a>
 
           </div>
         </div>
@@ -28,3 +28,11 @@
 
 {% endblock body %}
 
+{% block js %}
+<script>
+  let previews = document.getElementsByClassName('preview');
+  Array.from(previews).forEach((element)=>{
+    element.innerHTML = element.innerText
+  })
+</script>
+{% endblock js %}

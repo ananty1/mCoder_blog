@@ -46,6 +46,8 @@ def search(request):
     params = {"blogs":blogs,'query':query}
     return render(request,'home/search.html',params)
 
+# Authentication API's
+
 def handleSignUp(request):
     if request.method =="POST":
         #get the parameters

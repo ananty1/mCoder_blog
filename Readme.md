@@ -74,5 +74,20 @@ and if anyone is having time reading this-do not forget
 ## Jaadu------
 if user.is_authenticated in django let's u logged in.
 
+## How to think about making Comments? Intersting question,huh!!
+Adding comment is really intersting,which is nothing just another model and another form 
 
+## To use static files do not forget to add this to settings.py of your project
+-----STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    "/var/www/static/",
+]
 
+## Well-well after successfully making a comment ,next turn is to do reply ,but i am not able to make proper blue-print to reply.
+
+## Questions? I couldn't resolve,how the hell the looping reply inside the comments are going to be written .
+As a first step, he saved the dictory[reply.sno]=[reply]
+Note: One can only reply to the original comment
+
+## Now Is the final one Editing the blog 
+ We have used tinyMCE Editor for it.
