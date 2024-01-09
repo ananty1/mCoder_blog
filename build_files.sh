@@ -4,4 +4,4 @@
 pip install -r requirement.txt
 
 # Run Django development server
-python3.10 manage.py runserver
+python3.9 manage.py runserver
