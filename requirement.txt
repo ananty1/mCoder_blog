@@ -1,2 +1,5 @@
-django==4.2.3
-#Do not forget to have your Internet on to load bootstrap css,and javascript
+asgiref==3.7.2
+Django==5.0
+python-decouple==3.8
+sqlparse==0.4.4
+tzdata==2023.3
