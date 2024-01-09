@@ -1,2 +1,27 @@
-pip install -r requirement.txt
-python3.10 manage.py collectstatic
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "mCoder/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
+    {
+      "src": "build_files.sh",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "staticfiles_build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "mCoder/wsgi.py"
+    }
+  ]
+}
