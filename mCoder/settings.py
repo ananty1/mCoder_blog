@@ -13,9 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os 
-from dotenv import dotenv_values
-config = dotenv_values(".env")
-
+from dotenv import load_dotenv
+load_dotenv()
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,9 +25,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config['SECRET_KEY']
+SECRET_KEY = os.getenv('SECRET_KEY')
 # SECRET_KEY = config('SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -95,14 +93,13 @@ WSGI_APPLICATION = 'mCoder.wsgi.app'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':config['NAME'],
-        'USER':config['USER'],
-        'PASSWORD':config['PASSWORD'],
-        'HOST':config['HOST'],
-        'PORT':config['PORT'],
+        'NAME':os.getenv('NAME'),
+        'USER':os.getenv('USER'),
+        'PASSWORD':os.getenv('PASSWORD'),
+        'HOST':os.getenv('HOST'),
+        'PORT':os.getenv('PORT'),
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
