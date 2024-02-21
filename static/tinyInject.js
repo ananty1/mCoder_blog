@@ -1,6 +1,6 @@
 var script = document.createElement('script')
 script.type = "text/javascript"
-script.src = "https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"
+script.src = "https://cdn.tiny.cloud/1/59j330iagkz36i9qw6ep7chbuvw1qrrf96t2hbmwg28888b7/tinymce/6/tinymce.min.js"
 document.head.appendChild(script)
 
 script.onload = function(){
