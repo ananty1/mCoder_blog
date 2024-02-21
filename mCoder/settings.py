@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os 
-# from decouple import config
+from dotenv import dotenv_values
+config = dotenv_values(".env")
 
 
 
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c2zse_q&7fy!-*g&1^g^hy587fz%-mopry67nishp+n%jb3iw'
+SECRET_KEY = config['SECRET_KEY']
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -94,14 +95,13 @@ WSGI_APPLICATION = 'mCoder.wsgi.app'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'railway',
-        'USER':'postgres',
-        'PASSWORD':'ed5*6D2BGeC3*g-*DBFe2b*1bFFgfF**',
-        'HOST':'roundhouse.proxy.rlwy.net',
-        'PORT':'32149',
+        'NAME':config['NAME'],
+        'USER':config['USER'],
+        'PASSWORD':config['PASSWORD'],
+        'HOST':config['HOST'],
+        'PORT':config['PORT'],
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
