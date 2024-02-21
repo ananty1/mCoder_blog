@@ -78,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mCoder.wsgi.application'
+WSGI_APPLICATION = 'mCoder.wsgi.app'
 
 
 # Database
